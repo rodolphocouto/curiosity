@@ -1,5 +1,6 @@
 package gov.nasa.curiosity.test.unit;
 
+import gov.nasa.curiosity.domain.exception.UnrecognizedDirectionException;
 import gov.nasa.curiosity.domain.model.Direction;
 import org.junit.Assert;
 import org.junit.Test;
@@ -98,5 +99,16 @@ public class DirectionTest {
     @Test
     public void westRightShouldBeNorth() {
         Assert.assertEquals(Direction.NORTH, Direction.WEST.getRight());
+    }
+
+    @Test(expected = UnrecognizedDirectionException.class)
+    public void shouldThrowsUnrecognizedDirectionException() {
+        try {
+            Direction.ofInitial('A');
+        } catch (UnrecognizedDirectionException ex) {
+            Assert.assertEquals('A', ex.getDirection());
+            Assert.assertEquals("'A' is not a recognized direction. Consider just these: (N,E,S,W)", ex.getMessage());
+            throw ex;
+        }
     }
 }

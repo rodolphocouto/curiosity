@@ -1,5 +1,10 @@
 package gov.nasa.curiosity.domain.model;
 
+import gov.nasa.curiosity.domain.exception.UnrecognizedDirectionException;
+
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * Rover direction.
  *
@@ -66,6 +71,13 @@ public enum Direction {
     public abstract Direction getLeft();
 
     public abstract Direction getRight();
+
+    public static Direction ofInitial(char initial) throws UnrecognizedDirectionException {
+        return Arrays.stream(Direction.values())
+                .filter(d -> Objects.equals(initial, d.getInitial()))
+                .findFirst()
+                .orElseThrow(() -> new UnrecognizedDirectionException(initial));
+    }
 
     public char getInitial() {
         return initial;
