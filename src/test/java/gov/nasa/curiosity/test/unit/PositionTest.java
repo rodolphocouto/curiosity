@@ -42,4 +42,24 @@ public class PositionTest {
         final Position position = Position.of(-10, -5, Direction.SOUTH);
         Assert.assertEquals("(-10,-5,S)", position.toString());
     }
+
+    @Test
+    public void shouldEquals() {
+        Assert.assertTrue(Position.of(0, 0, Direction.NORTH).equals(Position.of(0, 0, Direction.NORTH)));
+    }
+
+    @Test
+    public void shouldXNotEquals() {
+        Assert.assertFalse(Position.of(0, 0, Direction.NORTH).equals(Position.of(1, 0, Direction.NORTH)));
+    }
+
+    @Test
+    public void shouldYNotEquals() {
+        Assert.assertFalse(Position.of(0, 0, Direction.NORTH).equals(Position.of(0, 1, Direction.NORTH)));
+    }
+
+    @Test
+    public void shouldDirectionNotEquals() {
+        Assert.assertFalse(Position.of(0, 0, Direction.NORTH).equals(Position.of(0, 0, Direction.SOUTH)));
+    }
 }

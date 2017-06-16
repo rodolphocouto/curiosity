@@ -1,5 +1,7 @@
 package gov.nasa.curiosity.domain.model;
 
+import java.util.Objects;
+
 /**
  * Rover position.
  *
@@ -32,6 +34,21 @@ public class Position {
 
     public Direction getDirection() {
         return direction;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Position position = (Position) o;
+        return Objects.equals(x, position.x)
+                && Objects.equals(y, position.y)
+                && Objects.equals(direction, position.direction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y, direction);
     }
 
     @Override
