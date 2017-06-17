@@ -3,9 +3,6 @@ package gov.nasa.curiosity.domain.service;
 import gov.nasa.curiosity.domain.model.Bounds;
 import gov.nasa.curiosity.domain.model.Movement;
 import gov.nasa.curiosity.domain.model.Position;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -15,15 +12,12 @@ import java.util.List;
  * @author Rodolpho Couto
  * @since 1.0
  */
-@Service
 public class MarsService {
 
     private final Bounds bounds;
     private final Position initialPosition;
 
-    @Autowired
-    public MarsService(@Value("mars.bounds") Bounds bounds,
-                       @Value("mars.initialPosition") Position initialPosition) {
+    public MarsService(Bounds bounds, Position initialPosition) {
         this.bounds = bounds;
         this.initialPosition = initialPosition;
     }
