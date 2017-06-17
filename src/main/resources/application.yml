@@ -5,13 +5,14 @@ spring:
     add-mappings: false
 server:
   port: 8080
+  context-path: /rest
 mars:
   bounds:
-    minX: 0
-    maxX: 5
-    minY: 0
-    maxY: 5
-  initialPosition:
+    min-x: 0
+    max-x: 5
+    min-y: 0
+    max-y: 5
+  initial-position:
     x: 0
     y: 0
     direction: N

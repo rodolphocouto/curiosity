@@ -25,13 +25,13 @@ public class Application implements Serializable {
     }
 
     @Bean
-    public MarsService marsService(@Value("${mars.bounds.minX}") int minX,
-                                   @Value("${mars.bounds.maxX}") int maxX,
-                                   @Value("${mars.bounds.minY}") int minY,
-                                   @Value("${mars.bounds.maxY}") int maxY,
-                                   @Value("${mars.initialPosition.x}") int x,
-                                   @Value("${mars.initialPosition.y}") int y,
-                                   @Value("${mars.initialPosition.direction}") char direction) {
+    public MarsService marsService(@Value("${mars.bounds.min-x}") int minX,
+                                   @Value("${mars.bounds.max-x}") int maxX,
+                                   @Value("${mars.bounds.min-y}") int minY,
+                                   @Value("${mars.bounds.max-y}") int maxY,
+                                   @Value("${mars.initial-position.x}") int x,
+                                   @Value("${mars.initial-position.y}") int y,
+                                   @Value("${mars.initial-position.direction}") char direction) {
 
         return new MarsService(Bounds.of(minX, maxX, minY, maxY), Position.of(x, y, Direction.ofInitial(direction)));
     }
