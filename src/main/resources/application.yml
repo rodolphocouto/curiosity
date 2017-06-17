@@ -5,3 +5,13 @@ spring:
     add-mappings: false
 server:
   port: 8080
+mars:
+  bounds:
+    minX: 0
+    maxX: 5
+    minY: 0
+    maxY: 5
+  initialPosition:
+    x: 0
+    y: 0
+    direction: N

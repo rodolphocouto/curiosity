@@ -1,4 +1,4 @@
-package gov.nasa.curiosity.test.unit;
+package gov.nasa.curiosity.test.unit.model;
 
 import gov.nasa.curiosity.domain.exception.UnrecognizedDirectionException;
 import gov.nasa.curiosity.domain.model.Direction;

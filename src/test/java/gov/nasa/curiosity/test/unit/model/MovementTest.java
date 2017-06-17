@@ -1,4 +1,4 @@
-package gov.nasa.curiosity.test.unit;
+package gov.nasa.curiosity.test.unit.model;
 
 import gov.nasa.curiosity.domain.exception.PositionOutOfBoundsException;
 import gov.nasa.curiosity.domain.exception.UnrecognizedMovementException;
