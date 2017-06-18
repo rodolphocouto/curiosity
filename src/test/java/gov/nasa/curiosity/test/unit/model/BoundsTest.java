@@ -56,26 +56,46 @@ public class BoundsTest {
 
     @Test
     public void shouldEquals() {
-        Assert.assertTrue(Bounds.of(0, 0, 0, 0).equals(Bounds.of(0, 0, 0, 0)));
+        final Bounds bounds1 = Bounds.of(0, 0, 0, 0);
+        final Bounds bounds2 = Bounds.of(0, 0, 0, 0);
+
+        Assert.assertEquals(bounds1, bounds2);
+        Assert.assertEquals(bounds1.hashCode(), bounds2.hashCode());
     }
 
     @Test
     public void shouldMinXNotEquals() {
-        Assert.assertFalse(Bounds.of(0, 0, 0, 0).equals(Bounds.of(-1, 0, 0, 0)));
+        final Bounds bounds1 = Bounds.of(0, 0, 0, 0);
+        final Bounds bounds2 = Bounds.of(-1, 0, 0, 0);
+
+        Assert.assertNotEquals(bounds1, bounds2);
+        Assert.assertNotEquals(bounds1.hashCode(), bounds2.hashCode());
     }
 
     @Test
     public void shouldMaxXNotEquals() {
-        Assert.assertFalse(Bounds.of(0, 0, 0, 0).equals(Bounds.of(0, 1, 0, 0)));
+        final Bounds bounds1 = Bounds.of(0, 0, 0, 0);
+        final Bounds bounds2 = Bounds.of(0, 1, 0, 0);
+
+        Assert.assertNotEquals(bounds1, bounds2);
+        Assert.assertNotEquals(bounds1.hashCode(), bounds2.hashCode());
     }
 
     @Test
     public void shouldMinYNotEquals() {
-        Assert.assertFalse(Bounds.of(0, 0, 0, 0).equals(Bounds.of(0, 0, -1, 0)));
+        final Bounds bounds1 = Bounds.of(0, 0, 0, 0);
+        final Bounds bounds2 = Bounds.of(0, 0, -1, 0);
+
+        Assert.assertNotEquals(bounds1, bounds2);
+        Assert.assertNotEquals(bounds1.hashCode(), bounds2.hashCode());
     }
 
     @Test
     public void shouldMaxYNotEquals() {
-        Assert.assertFalse(Bounds.of(0, 0, 0, 0).equals(Bounds.of(0, 0, 0, 1)));
+        final Bounds bounds1 = Bounds.of(0, 0, 0, 0);
+        final Bounds bounds2 = Bounds.of(0, 0, 0, 1);
+
+        Assert.assertNotEquals(bounds1, bounds2);
+        Assert.assertNotEquals(bounds1.hashCode(), bounds2.hashCode());
     }
 }

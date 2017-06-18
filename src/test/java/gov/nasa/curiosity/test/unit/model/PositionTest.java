@@ -45,21 +45,37 @@ public class PositionTest {
 
     @Test
     public void shouldEquals() {
-        Assert.assertTrue(Position.of(0, 0, Direction.NORTH).equals(Position.of(0, 0, Direction.NORTH)));
+        final Position position1 = Position.of(0, 0, Direction.NORTH);
+        final Position position2 = Position.of(0, 0, Direction.NORTH);
+
+        Assert.assertEquals(position1, position2);
+        Assert.assertEquals(position1.hashCode(), position2.hashCode());
     }
 
     @Test
     public void shouldXNotEquals() {
-        Assert.assertFalse(Position.of(0, 0, Direction.NORTH).equals(Position.of(1, 0, Direction.NORTH)));
+        final Position position1 = Position.of(0, 0, Direction.NORTH);
+        final Position position2 = Position.of(1, 0, Direction.NORTH);
+
+        Assert.assertNotEquals(position1, position2);
+        Assert.assertNotEquals(position1.hashCode(), position2.hashCode());
     }
 
     @Test
     public void shouldYNotEquals() {
-        Assert.assertFalse(Position.of(0, 0, Direction.NORTH).equals(Position.of(0, 1, Direction.NORTH)));
+        final Position position1 = Position.of(0, 0, Direction.NORTH);
+        final Position position2 = Position.of(0, 1, Direction.NORTH);
+
+        Assert.assertNotEquals(position1, position2);
+        Assert.assertNotEquals(position1.hashCode(), position2.hashCode());
     }
 
     @Test
     public void shouldDirectionNotEquals() {
-        Assert.assertFalse(Position.of(0, 0, Direction.NORTH).equals(Position.of(0, 0, Direction.SOUTH)));
+        final Position position1 = Position.of(0, 0, Direction.NORTH);
+        final Position position2 = Position.of(0, 0, Direction.SOUTH);
+
+        Assert.assertNotEquals(position1, position2);
+        Assert.assertNotEquals(position1.hashCode(), position2.hashCode());
     }
 }
