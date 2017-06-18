@@ -1,4 +1,6 @@
-language: java
 sudo: false
-jdk:
-  - oraclejdk8
+language: java
+jdk: oraclejdk8
+script: ./mvnw clean verify
+after_success:
+  - ./mvnw coveralls:report
