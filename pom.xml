@@ -9,6 +9,21 @@
     <version>1.0</version>
 
     <name>Curiosity</name>
+    <description>REST API to move NASA's rover on Mars</description>
+
+    <scm>
+        <url>https://github.com/rodolphocouto/curiosity</url>
+        <connection>scm:git:ssh://git@github.com:rodolphocouto/curiosity.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:rodolphocouto/curiosity.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Rodolpho Sbaraglini Couto</name>
+            <email>rodolpho.sbaraglini@gmail.com</email>
+            <url>https://github.com/rodolphocouto</url>
+        </developer>
+    </developers>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

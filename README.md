@@ -43,11 +43,11 @@ To send commands to the rover, it is necessary to make a `POST` request to `http
 * `R` to move 90° to the right;
 * `M` to move 1 position forward.
 
-After executing the movements, the rover will return the last position in this format: `(x,y,D)`, where:
+After executing the movements, the rover will return the last position in this format: `(x,y,d)`, where:
 
 * `x` represents the position X;
 * `y` represents the position Y;
-* `D` represents the initial of cardinal direction (`N`orth, `E`ast, `S`outh and `W`est).
+* `d` represents the initial of cardinal direction (`N`orth, `E`ast, `S`outh and `W`est).
 
 ### Examples
 
